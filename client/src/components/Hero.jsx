@@ -18,7 +18,7 @@ const Hero = () => {
 
         {/* ------------ Buttons ------------- */}
 
-        <div className="mt-7 flex flex-col sm:flex-row gap-4 w-full justify-center sm:justify-start">
+        <div className="mt-7 flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start items-center">
           <Link
             className="text-white bg-[#262626] rounded-lg px-4 py-2.5 w-full sm:w-[200px] flex items-center justify-center shadow-md flex-none cursor-pointer"
             to="identify"
