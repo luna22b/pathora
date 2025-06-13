@@ -1,18 +1,19 @@
+import path from "path";
 import express from "express";
-import cors from "cors";
+import fetch from "node-fetch";
 
 const app = express();
-const PORT = 4000; // or any port you like
 
-app.use(cors()); // enable CORS for all origins
-app.use(express.json()); // to parse JSON request bodies
+app.use(express.static(path.join(__dirname, "client/dist")));
 
-// Example route
-app.get("/api/hello", (req, res) => {
-  res.json({ message: "Hello from the server!" });
-});
+(async () => {
+  const response = await fetch(
+    "https://trefle.io/api/v1/plants?token=YOUR_TREFLE_TOKEN"
+  );
+  const json = await response.json();
+  console.log(json);
+})();
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/dist", "index.html"));
 });
