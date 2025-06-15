@@ -1,33 +1,56 @@
+import BrowseSearch from "./BrowseSearch";
+import LoadingSpinner from "./LoadingSpinner";
+
 const PlantCard = ({ records }) => {
   return (
-    <div className="flex flex-col gap-3">
+    <>
+      <BrowseSearch />
       {records.length === 0 ? (
-        <div>Loading...</div>
+        <div className="flex justify-center items-center min-h-[50vh] -mt-35">
+          <LoadingSpinner />
+        </div>
       ) : (
-        records.map((plant) => (
-          <div
-            key={plant.id}
-            className="shadow-xl mb-2 h-96 w-85 mx-auto mt-2 rounded-2xl"
-          >
-            <div>
-              <img
-                src={plant.default_image?.original_url}
-                alt={plant.common_name || "Plant image"}
-                className="h-48 rounded-t-2xl w-85 object-cover"
-              />
-            </div>
-            <div className="mt-5 ml-5">
-              <p className="font-semibold text-md">
-                {plant.common_name || "Unknown Name"}
-              </p>
-              <p className="text-sm italic text-[#737373]">
-                {plant.scientific_name || "Unknown Name"}
-              </p>
-            </div>
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {records.map((plant) => (
+              <div
+                key={plant.id}
+                className="shadow-xl mb-2 h-96 w-[90vw] md:w-[45vw] lg:w-[30vw] max-w-sm mx-auto mt-2 rounded-2xl flex flex-col"
+              >
+                <div>
+                  <img
+                    src={plant.image_url}
+                    alt={plant.common_name || "Image of plant"}
+                    className="h-48 rounded-t-2xl w-full object-cover shadow"
+                  />
+                </div>
+                <div className="mt-5 ml-5 flex-1 flex flex-col justify-between pr-5 pb-3">
+                  <p className="font-semibold text-md">
+                    {plant.common_name || "Unknown Name"}
+                  </p>
+                  <p className="text-sm italic text-[#737373]">
+                    {plant.scientific_name || "Unknown Name"}
+                  </p>
+                  <p className="text-sm text-[#737373]">
+                    {plant.genus || "Unknown Name"} ·{" "}
+                    {plant.family || "Unknown Name"}
+                  </p>
+                  {plant.family_common_name && (
+                    <div className="text-xs font-bold border border-[#ccc] rounded-2xl flex justify-center w-25 p-0.5 mt-8">
+                      {plant.family_common_name}
+                    </div>
+                  )}
+                  <div className="text-xs mb-2 mt-auto text-[#737373] border-t border-t-[#eee] pt-1">
+                    <span>Synonyms: </span>
+                    <span>{plant.synonyms?.[0] || "None available"}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))
+        </div>
       )}
-    </div>
+    </>
   );
 };
 
