@@ -13,7 +13,7 @@ const BrowsePlants = () => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        setRecords(data.data || []);
+        setRecords(data || []);
       } catch (err) {
         console.log("Failed to fetch plants: ", err);
         setError(err.message);
