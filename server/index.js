@@ -16,7 +16,7 @@ const TOKEN = process.env.token;
 app.get("/api/plants", async (req, res) => {
   try {
     const response = await fetch(
-      `https://perenual.com/api/v2/species-list?key=${TOKEN}`
+      `https://trefle.io/api/v1/plants?token=${TOKEN}`
     );
 
     if (!response.ok) {
@@ -28,7 +28,7 @@ app.get("/api/plants", async (req, res) => {
     }
 
     const data = await response.json();
-    res.json(data);
+    res.json(data.data);
   } catch (err) {
     console.error("Server error:", err);
     res
