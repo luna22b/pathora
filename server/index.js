@@ -15,23 +15,25 @@ const TOKEN = process.env.token;
 
 app.get("/api/plants", async (req, res) => {
   try {
-    const page = req.query.page || 1;
     const response = await fetch(
-      `https://trefle.io/api/v1/plants?token=${TOKEN}&page=${page}`
+      `https://perenual.com/api/v2/species-list?key=${TOKEN}`
     );
 
     if (!response.ok) {
       const errorBody = await response.json();
       return res.status(response.status).json({
-        error: "Failed to fetch from external API",
+        error: "Failed to fetch plant list",
         details: errorBody,
       });
     }
+
     const data = await response.json();
     res.json(data);
   } catch (err) {
-    console.log("Server error:", err);
-    res.status(500).json({ error: "Error fetching file", details: err });
+    console.error("Server error:", err);
+    res
+      .status(500)
+      .json({ error: "Error fetching plant list", details: err.message });
   }
 });
 
