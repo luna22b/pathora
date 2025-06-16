@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="max-w-6xl py-6 px-4 mx-auto mt-18 flex flex-col items-center font-[Inter] lg:flex-row">
       <div className="flex flex-col text-center sm:text-left">
         <div className="flex flex-col text-5xl font-semibold leading-tight">
-          <p className="lg:w-120">
+          <p className="lg:w-135">
             Discover The <span className="text-[#187C48]">Green</span> World
             Around You
           </p>
