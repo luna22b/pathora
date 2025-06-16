@@ -4,7 +4,6 @@ import LoadingSpinner from "./LoadingSpinner";
 const PlantCard = ({ records }) => {
   return (
     <>
-      <BrowseSearch />
       {records.length === 0 ? (
         <div className="flex justify-center items-center min-h-[50vh] -mt-35">
           <LoadingSpinner />
@@ -15,7 +14,7 @@ const PlantCard = ({ records }) => {
             {records.map((plant) => (
               <div
                 key={plant.id}
-                className="shadow-xl mb-2 h-96 w-[90vw] md:w-[45vw] lg:w-[30vw] max-w-sm mx-auto mt-2 rounded-2xl flex flex-col"
+                className="shadow-xl hover:shadow-[0_6px_16px_rgba(0,0,0,0.25)] transition-shadow duration-300 mb-2 h-96 w-[90vw] md:w-[45vw] lg:w-[30vw] max-w-sm mx-auto mt-2 rounded-2xl flex flex-col cursor-pointer"
               >
                 <div>
                   <img
