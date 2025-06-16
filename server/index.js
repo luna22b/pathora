@@ -28,7 +28,7 @@ app.get("/api/plants", async (req, res) => {
     }
 
     const data = await response.json();
-    res.json(data.data);
+    res.json(data);
   } catch (err) {
     console.error("Server error:", err);
     res
