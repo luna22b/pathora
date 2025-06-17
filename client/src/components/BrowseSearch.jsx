@@ -6,7 +6,7 @@ const BrowseSearch = ({ records = [], totalCount }) => {
       </p>
       <p className="mt-3 text-[#737373] text-center text-sm w-full px-4">
         Discover thousands of plant species with comprehensive botanical data
-        powered by the Trefle API.
+        powered by the Perenual API.
       </p>
       <div className="text-center mt-3 mb-4 text-xs text-[#737373] font-medium">
         {totalCount.toLocaleString()} species available
