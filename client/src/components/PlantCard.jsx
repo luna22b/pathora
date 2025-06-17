@@ -18,7 +18,7 @@ const PlantCard = ({ records }) => {
               >
                 <div>
                   <img
-                    src={plant.image_url}
+                    src={plant.default_image?.medium_url}
                     alt={plant.common_name || "Image of plant"}
                     className="h-48 rounded-t-2xl w-full object-cover shadow"
                   />
@@ -40,8 +40,8 @@ const PlantCard = ({ records }) => {
                     </div>
                   )}
                   <div className="text-xs mb-2 mt-auto text-[#737373] border-t border-t-[#eee] pt-1">
-                    <span>Synonyms: </span>
-                    <span>{plant.synonyms?.[0] || "None available"}</span>
+                    <span>Other Name: </span>
+                    <span>{plant.other_name?.[0] || "None available"}</span>
                   </div>
                 </div>
               </div>
