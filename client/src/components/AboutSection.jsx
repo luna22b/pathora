@@ -56,7 +56,7 @@ const AboutSection = () => {
                 />
               </svg>
               <p className="pt-2 font-semibold text-xl text-black">
-                Explore plants
+                Journal Plants
               </p>
             </Card>
             <Card>
