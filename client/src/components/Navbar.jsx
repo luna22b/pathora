@@ -21,8 +21,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className="text-gray-700 cursor-pointer" to="/browseplants">
-              Browse Plants
+            <Link className="text-gray-700 cursor-pointer" to="/plantjournal">
+              Plant Journal
             </Link>
           </li>
           <li>
