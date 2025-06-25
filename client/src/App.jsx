@@ -5,6 +5,7 @@ import PlantJournal from "./pages/PlantJournal";
 import IdentifyPlant from "./pages/IdentifyPlant";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import "./App.css";
 import "@fontsource/inter";
 import "@fontsource/inter/400.css";
@@ -19,6 +20,7 @@ function App() {
         <Route path="/plantjournal" element={<PlantJournal />} />
         <Route path="/identify" element={<IdentifyPlant />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
