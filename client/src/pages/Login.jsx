@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div className="font-[Inter] w-xs mx-auto mt-20">
