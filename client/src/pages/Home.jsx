@@ -1,8 +1,8 @@
-import Hero from "../components/Hero";
-import AboutSection from "../components/AboutSection";
-import authStore from "../store/authStore";
-import StatCard from "../components/StatCard";
-import ReminderCard from "../components/ReminderCard";
+import Hero from '../components/Hero';
+import AboutSection from '../components/AboutSection';
+import authStore from '../store/authStore';
+import StatCard from '../components/StatCard';
+import ReminderCard from '../components/ReminderCard';
 
 const Home = () => {
   const isAuthenticated = authStore((state) => state.isAuthenticated);
@@ -12,10 +12,10 @@ const Home = () => {
     <>
       {isAuthenticated ? (
         <div className="flex flex-col items-center text-center font-[Inter]">
-          <div className="text-center mt-10 font-bold font-[Inter] text-2xl">
+          <div className="mt-10 text-center font-[Inter] text-2xl font-bold">
             Welcome Back, {username}! 🌿 <br />
           </div>
-          <span className="mt-2 text-md w-[80vw] text-[#737373]">
+          <span className="text-md mt-2 w-[80vw] text-[#737373]">
             Ready to start your plant identification journey?
           </span>
 

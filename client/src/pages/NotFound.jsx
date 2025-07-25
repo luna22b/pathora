@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const NotFound = () => {
   return (
@@ -19,7 +19,7 @@ const NotFound = () => {
           `}</style>
           <g>
             <path
-              className="w-5 h-5"
+              className="h-5 w-5"
               d="M214.2,319.991L214.2,319.991L214.2,319.991C197.34,301.585,232.293,180.319,27.075,97.569
                 c-33.75,6.125-71.688,176.672,127.719,228.844c59.609,29.797,50.219,79.469,50.219,107.078h38.344
                 c0,0-15.688-87.578,54.375-119.672c47.672-21.828,179.328-28.828,214.265-225.547C445.387,49.757,208.825,124.835,214.2,319.991z
@@ -34,12 +34,12 @@ const NotFound = () => {
           </g>
         </svg>
       </div>
-      <div className="text-center py-20 pt-5">
-        <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
+      <div className="py-20 pt-5 text-center">
+        <h1 className="mb-4 text-4xl font-bold">404 - Page Not Found</h1>
         <p className="text-gray-600">
           The page you're looking for doesn't exist.
         </p>
-        <Link className="hover:underline cursor-pointer pt-3 block" to="/">
+        <Link className="block cursor-pointer pt-3 hover:underline" to="/">
           Back to home
         </Link>
       </div>
