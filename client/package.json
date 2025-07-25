@@ -10,11 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.14.3",
+    "@cloudinary/url-gen": "^1.21.0",
     "@fontsource/inter": "^5.2.6",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/vite": "^4.1.10",
     "axios": "^1.10.0",
+    "cloudinary": "^2.7.0",
+    "dotenv": "^17.0.1",
+    "form-data": "^4.0.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-dropzone": "^14.3.8",
     "react-router-dom": "^7.6.2",
     "tailwindcss": "^4.1.10",
     "zustand": "^5.0.6"
@@ -28,6 +35,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "vite": "^6.3.5"
   }
 }
