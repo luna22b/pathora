@@ -1,21 +1,21 @@
 const AboutSection = () => {
   const Card = ({ children }) => (
-    <div className="bg-white rounded-2xl w-full h-60 shadow-lg text-center pt-3 px-4">
+    <div className="h-60 w-full rounded-2xl bg-white px-4 pt-3 text-center shadow-lg">
       {children}
     </div>
   );
 
   return (
-    <div className="bg-[#fcfcfc] py-16 lg:mt-35 mt-10">
-      <div className="max-w-6xl mx-auto px-4">
+    <div className="mt-10 bg-[#fcfcfc] py-16 lg:mt-35">
+      <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col gap-5 text-left">
-          <p className="font-semibold text-3xl">Why Choose Pathora?</p>
-          <p className="text-[#545454] text-xl">
+          <p className="text-3xl font-semibold">Why Choose Pathora?</p>
+          <p className="text-xl text-[#545454]">
             Seamlessly connecting you with the green world around you — here's
             what sets us apart:
           </p>
 
-          <div className="flex flex-col gap-4 mt-4 text-[#333] lg:flex-row">
+          <div className="mx-auto mt-4 flex w-[80vw] flex-col gap-10 text-[#333] lg:mx-0 lg:max-w-6xl lg:flex-row">
             <Card>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@ const AboutSection = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="size-10 mx-auto mt-2 bg-[#ddd] p-2 rounded-4xl"
+                className="mx-auto mt-2 size-10 rounded-4xl bg-[#ddd] p-2"
               >
                 <path
                   strokeLinecap="round"
@@ -36,7 +36,7 @@ const AboutSection = () => {
                   d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
                 />
               </svg>
-              <p className="pt-2 font-semibold text-xl text-black">
+              <p className="pt-2 text-xl font-semibold text-black">
                 Take pictures
               </p>
             </Card>
@@ -47,7 +47,7 @@ const AboutSection = () => {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-10 mx-auto mt-2 bg-[#ddd] p-2 rounded-4xl"
+                className="mx-auto mt-2 size-10 rounded-4xl bg-[#ddd] p-2"
               >
                 <path
                   strokeLinecap="round"
@@ -55,7 +55,7 @@ const AboutSection = () => {
                   d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
                 />
               </svg>
-              <p className="pt-2 font-semibold text-xl text-black">
+              <p className="pt-2 text-xl font-semibold text-black">
                 Journal Plants
               </p>
             </Card>
@@ -66,7 +66,7 @@ const AboutSection = () => {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-10 mx-auto mt-2 bg-[#ddd] p-2 rounded-4xl"
+                className="mx-auto mt-2 size-10 rounded-4xl bg-[#ddd] p-2"
               >
                 <path
                   strokeLinecap="round"
@@ -74,7 +74,7 @@ const AboutSection = () => {
                   d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
                 />
               </svg>
-              <p className="pt-2 font-semibold text-xl text-black">
+              <p className="pt-2 text-xl font-semibold text-black">
                 Talk to AI
               </p>
             </Card>

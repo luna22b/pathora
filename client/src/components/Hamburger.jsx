@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const Hamburger = () => {
   const handleClick = () => {};
@@ -10,7 +10,7 @@ const Hamburger = () => {
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       stroke="currentColor"
-      className="w-6 h-6 cursor-pointer"
+      className="h-6 w-6 cursor-pointer"
     >
       <path
         strokeLinecap="round"

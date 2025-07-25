@@ -1,26 +1,26 @@
-import logo from "../assets/logo.jpg";
-import { Link } from "react-router-dom";
+import logo from '../assets/logo.jpg';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <div className="max-w-6xl py-6 px-4 mx-auto mt-10 flex flex-col items-center font-[Inter] lg:flex-row">
+    <div className="mx-auto mt-10 flex max-w-6xl flex-col items-center px-4 py-6 font-[Inter] lg:flex-row">
       <div className="flex flex-col text-center sm:text-left">
-        <div className="flex flex-col text-5xl font-semibold leading-tight">
+        <div className="flex flex-col text-5xl leading-tight font-semibold">
           <p className="lg:w-135">
             Discover The <span className="text-[#187C48]">Green</span> World
             Around You
           </p>
         </div>
-        <p className="text-[#737373] mt-5 text-xl">
+        <p className="mt-5 text-xl text-[#737373]">
           Identify a variety of plants with our AI-powered technology and learn
           more about their botanical names, care instructions, and other facts.
         </p>
 
         {/* ------------ Buttons ------------- */}
 
-        <div className="mt-7 flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start items-center">
+        <div className="mt-7 flex w-full flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
           <Link
-            className="text-white bg-[#262626] rounded-lg px-4 py-2.5 w-full sm:w-[200px] flex items-center justify-center shadow-md flex-none cursor-pointer"
+            className="flex w-full flex-none cursor-pointer items-center justify-center rounded-lg bg-[#262626] px-4 py-2.5 text-white shadow-md sm:w-[200px]"
             to="identify"
           >
             <svg
@@ -29,7 +29,7 @@ const Hero = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-5 h-5 mr-1 -translate-x-1"
+              className="mr-1 h-5 w-5 -translate-x-1"
             >
               <path
                 strokeLinecap="round"
@@ -45,7 +45,7 @@ const Hero = () => {
             Start identifying
           </Link>
           <Link
-            className="border border-black text-black rounded-lg px-4 py-2.5 w-full sm:w-[200px] flex items-center justify-center shadow-md flex-none cursor-pointer"
+            className="flex w-full flex-none cursor-pointer items-center justify-center rounded-lg border border-black px-4 py-2.5 text-black shadow-md sm:w-[200px]"
             to="/plantjournal"
           >
             <svg
@@ -54,7 +54,7 @@ const Hero = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-5 h-5 mr-1 -translate-x-1"
+              className="mr-1 h-5 w-5 -translate-x-1"
             >
               <path
                 strokeLinecap="round"
@@ -73,7 +73,7 @@ const Hero = () => {
         <img
           src={logo}
           alt="Picture of many dandelions"
-          className="object-contain w-100 border-[#187C48] border-2 rounded-2xl shadow-lg md:w-150 lg:w-250"
+          className="w-100 rounded-2xl border-2 border-[#187C48] object-contain shadow-lg md:w-150 lg:w-250"
         />
       </div>
     </div>
