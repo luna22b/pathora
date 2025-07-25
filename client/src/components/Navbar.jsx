@@ -1,7 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
-import LogoNav from "../assets/LogoNav";
-import Hamburger from "./Hamburger";
-import authStore from "../store/authStore";
+import { Link, useNavigate } from 'react-router-dom';
+import LogoNav from '../assets/LogoNav';
+import Hamburger from './Hamburger';
+import authStore from '../store/authStore';
+import { HomeIcon } from '../assets/Images';
+import { Book } from '../assets/Images';
 
 const Navbar = () => {
   const logout = authStore((state) => state.logout);
@@ -10,52 +12,63 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/");
+    navigate('/');
   };
 
   return (
     <nav>
-      <div className="max-w-6xl mx-auto border-b border-b-[#e0e0e0] pb-4 px-4 py-6 flex justify-between items-center font-[Inter]">
+      <div className="mx-auto flex max-w-6xl items-center justify-between border-b border-b-[#e0e0e0] px-4 py-6 pb-4 font-[Inter]">
         <Link
-          className="text-xl cursor-pointer font-semibold flex gap-3 items-center"
+          className="flex cursor-pointer items-center gap-3 text-xl font-semibold"
           to="/"
         >
           <LogoNav />
           <p className="hidden md:block">Pathora</p>
         </Link>
 
-        <ul className="hidden md:flex space-x-6 items-center">
+        <ul className="hidden items-center space-x-6 md:flex">
           <li>
-            <Link className="text-gray-700 cursor-pointer" to="/">
+            <Link className="flex cursor-pointer flex-row text-gray-700" to="/">
+              <HomeIcon />
               Home
             </Link>
           </li>
           <li>
-            <Link className="text-gray-700 cursor-pointer" to="/plantjournal">
+            <Link
+              className="flex cursor-pointer flex-row text-gray-700"
+              to="/plantjournal"
+            >
+              <Book />
               Journal
             </Link>
           </li>
           <li>
-            <Link className="text-gray-700 cursor-pointer" to="/identify">
+            <Link
+              className="flex cursor-pointer flex-row text-gray-700"
+              to="/identify"
+            >
               Identify
             </Link>
           </li>
           <li>
-            <Link className="text-gray-700 cursor-pointer" to="/plants">
-              Plants
+            <Link
+              className="flex cursor-pointer flex-row text-gray-700"
+              to="/gallery"
+            >
+              Gallery
             </Link>
           </li>
           <li>
             {isAuthenticated ? (
               <button
                 onClick={handleLogout}
-                className="cursor-pointer bg-[#262626] text-white rounded-lg px-4 py-2"
+                className="cursor-pointer rounded-lg bg-[#262626] px-4 py-2 text-white"
               >
                 Logout
               </button>
             ) : (
               <Link
-                className="cursor-pointer bg-[#262626] text-white rounded-lg px-4 py-2"
+                className="cursor-pointer rounded-lg bg-[#262626] px-4 py-2 text-white"
                 to="/login"
               >
                 Sign In
