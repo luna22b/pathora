@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import axios from 'axios';
 import authStore from '../store/authStore';
+import { LeafLogo } from '../assets/Images';
 
 const IdentifyPlant = () => {
   const [preview, setPreview] = useState(null);
@@ -41,9 +42,9 @@ const IdentifyPlant = () => {
         }
       );
       setResult(res.data);
+      console.log(res.data);
     } catch (err) {
       console.error(err);
-      alert('Failed to identify plant');
     } finally {
       setLoading(false);
     }
@@ -59,7 +60,7 @@ const IdentifyPlant = () => {
         detailed information
       </div>
       <div>
-        <div className="mx-auto mt-10 h-60 w-[90vw] rounded-md border border-[#ddd] shadow-sm">
+        <div className="mx-auto mt-10 h-80 w-[90vw] rounded-md border border-[#ddd] shadow-sm">
           <input
             type="file"
             accept="image/*"
@@ -82,7 +83,50 @@ const IdentifyPlant = () => {
           </button>
         </div>
       </div>
-      <div className="mx-auto mt-10 h-60 w-[90vw] rounded-md border border-[#ddd] shadow-sm"></div>
+
+      <div className="mx-auto mt-10 mb-25 h-80 w-[90vw] rounded-md border border-[#ddd] shadow-sm">
+        <div className="mx-auto mt-2 items-center rounded text-center">
+          {result ? (
+            <>
+              <div>{result.results[0].species.commonNames[0]}</div>
+              <div className="border-b border-b-[#eee] pb-2 text-sm text-gray-500">
+                {result.results[0].species.scientificName}
+                <div className="mt-2 flex justify-center gap-2 text-black">
+                  <LeafLogo />
+                  {(result.results[0].score * 100).toFixed(2)}%
+                </div>
+              </div>
+
+              <p className="mt-4 text-sm">Other possible matches</p>
+
+              <div className="mx-auto mt-5 h-17 w-[85vw] rounded-md bg-gray-100 p-1 pl-2 text-start text-sm">
+                <div>{result.results[1].species.commonNames[0]}</div>
+                <div className="text-xs text-gray-500 italic">
+                  {result.results[1].species.scientificName}
+                </div>
+                <div className="mt-1 w-fit rounded bg-green-300 px-2 text-center text-xs">
+                  {(result.results[1].score * 100).toFixed(2)}%
+                </div>
+              </div>
+
+              <div className="mx-auto mt-2 h-17 w-[85vw] rounded-md bg-gray-100 p-1 pl-2 text-start text-sm">
+                <div>{result.results[2].species.commonNames[0]}</div>
+                <div className="text-xs text-gray-500 italic">
+                  {result.results[2].species.scientificName}
+                </div>
+                <div className="mt-1 w-fit rounded bg-green-300 px-2 text-center text-xs">
+                  {(result.results[2].score * 100).toFixed(2)}%
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="mt-10 text-center text-gray-400">
+              <p className="text-md font-medium">No plant identified yet.</p>
+              <p className="text-sm">Upload a photo above to get started 🌿</p>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
